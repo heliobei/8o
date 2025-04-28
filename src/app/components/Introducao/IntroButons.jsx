@@ -1,4 +1,3 @@
-import React from 'react'
 import { CgWebsite } from "react-icons/cg";
 
 function IntroButons() {
@@ -7,10 +6,15 @@ function IntroButons() {
     { name: 'Site 3', url: 'https://8oano-3.beieducacaopedagogico.com/' },
     { name: 'Site 4', url: 'https://8oano-4.beieducacaopedagogico.com/' }
   ];
+
+  const openWebsite = (url) => {
+    window.open(url, '_blank');
+  };
+
   return (
     <>
-        <h1 className="text-3xl font-bold p-8 text-center">Acesso aos sites</h1>
-        <div className="flex justify-center space-x-16 pb-8">
+      <h1 className="text-3xl font-bold p-12 text-center text-slate-700">Acesso aos sites</h1>
+      <div className="flex justify-center space-x-16 pb-8">
         {sites.map((site) => (
           <button
             key={site.name}
@@ -21,11 +25,9 @@ function IntroButons() {
             {site.name}
           </button>
         ))}
-        </div>
-
-
+      </div>
     </>
-  )
+  );
 }
 
-export default IntroButons
+export default IntroButons;
